@@ -1,9 +1,0 @@
-package ru.yandex.practicum;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-class WordleTest {
-
-    Wordle wordle = new Wordle();
-
-}
