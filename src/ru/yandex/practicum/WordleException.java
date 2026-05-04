@@ -6,5 +6,7 @@ public class WordleException extends Exception{
         super(message);
     }
 
-    public WordleException() {}
+    public WordleException() {
+
+    }
 }
