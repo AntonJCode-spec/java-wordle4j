@@ -114,9 +114,6 @@ public class WordleGame {
 
     public void makeMove(String input) throws WordleException {
         log.printf("Ход <%d>\n", (7 - steps));
-//        log.println("Текущие правильные буквы: " + correctLetter);
-//        log.println("Текущие буквы не на своих местах: " + otherPositionLetter);
-//        log.println("Исключенные буквы: " + incorrectLetter);
         if (input.isBlank()) {
             log.println("Запрошены подсказки");
             updateHint();
@@ -252,7 +249,7 @@ public class WordleGame {
             throw new RuntimeException("Ответ имеет неверную длину: " + answer);
         }
         if (log == null) {
-            throw new RuntimeException("Логгер не инициализирован");
+            throw new RuntimeException("Лог файл не инициализирован");
         }
     }
 }
