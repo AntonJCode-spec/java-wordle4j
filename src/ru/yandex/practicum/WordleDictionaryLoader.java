@@ -1,7 +1,6 @@
 package ru.yandex.practicum;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
@@ -25,7 +24,9 @@ public class WordleDictionaryLoader {
 
             while ((str = br.readLine()) != null) {
                 str = formatString(str);
-                if (str.length() != WordleGame.WORD_SIZE) {continue;}
+                if (str.length() != WordleGame.WORD_SIZE) {
+                    continue;
+                }
                 dictionary.add(str);
                 isEmpty = false;
             }
@@ -45,5 +46,4 @@ public class WordleDictionaryLoader {
     private static String formatString(String str) {
         return str.trim().toLowerCase().replace('ё', 'е');
     }
-
 }
