@@ -14,12 +14,12 @@ public class WordleGameTest {
 
     @BeforeEach
     public void validateShouldBeCorrectTest() throws Exception {
-            game = new WordleGame(Paths.get("TestFile/words_ruTest.txt"), 6, new PrintWriter(System.out), "арбуз");
-            Assertions.assertTrue(true);
+        game = new WordleGame(Paths.get("TestFile/words_ruTest.txt"), 6, new PrintWriter(System.out), "арбуз");
+        Assertions.assertTrue(true);
     }
 
     @Test
-    public void checkWordShouldReturnAllPlusIfInputEqualsAnswerTest() throws Exception{
+    public void checkWordShouldReturnAllPlusIfInputEqualsAnswerTest() throws Exception {
         Assertions.assertEquals(WordleGame.WINNING_RESULT, game.checkWord("Арбуз"));
     }
 

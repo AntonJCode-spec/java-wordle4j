@@ -37,7 +37,7 @@ public class Wordle {
                     }
                 } catch (PrintHintException e) {
                     System.out.println("Выводим подсказки");
-                    for (String str: game.getHintList()) {
+                    for (String str : game.getHintList()) {
                         System.out.println(str);
                     }
 
@@ -55,5 +55,4 @@ public class Wordle {
         }
 
     }
-
 }

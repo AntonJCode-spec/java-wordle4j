@@ -32,7 +32,6 @@ public class WordleGame {
     private Set<String> otherPositionLetter;
 
 
-
     public WordleGame(Path directory, int steps, PrintWriter log) throws CriticalGameException {
         this.steps = steps;
         this.log = log;
@@ -93,9 +92,11 @@ public class WordleGame {
 
     public String checkWord(String inputWord) throws WordleException {
         inputWord = validateWord(inputWord);
-        if (inputWord.equals(answer)) {return WINNING_RESULT;}
+        if (inputWord.equals(answer)) {
+            return WINNING_RESULT;
+        }
         StringBuilder result = new StringBuilder();
-        for(int i = 0; i < WORD_SIZE; i++) {
+        for (int i = 0; i < WORD_SIZE; i++) {
             if (answer.charAt(i) == inputWord.charAt(i)) {
                 result.append("+");
                 correctLetter.put(inputWord.substring(i, i + 1), i);
@@ -176,9 +177,9 @@ public class WordleGame {
     private List<String> getHintByIncorrectLetter() {
         List<String> list = new ArrayList<>();
 
-        for(String str: dictionary.getWords()) {
+        for (String str : dictionary.getWords()) {
             boolean hasIncorrect = false;
-            for (String letter: incorrectLetter) {
+            for (String letter : incorrectLetter) {
                 if (str.contains(letter)) {
                     hasIncorrect = true;
                     break;
@@ -196,9 +197,9 @@ public class WordleGame {
     private List<String> getHintByIncorrectPosition(List<String> list) {
         List<String> newList = new ArrayList<>();
 
-        for (String str: list) {
+        for (String str : list) {
             boolean isIncorrectPosition = true;
-            for(String letter: otherPositionLetter) {
+            for (String letter : otherPositionLetter) {
                 if (!str.contains(letter)) {
                     isIncorrectPosition = false;
                     break;
@@ -215,7 +216,7 @@ public class WordleGame {
     private List<String> getHintByCorrectLetter(List<String> list) {
         List<String> newList = new ArrayList<>();
 
-        for (String str: list) {
+        for (String str : list) {
             boolean isCorrect = true;
             for (Map.Entry<String, Integer> entry : correctLetter.entrySet()) {
 
